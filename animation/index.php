@@ -23,6 +23,87 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<title>コード管理</title>
+	<style>
+/* ===============
+js-trigger up
+===============*/
+/* //trigger upをつける */
+.trigger {
+opacity: 0;
+}
+.trigger.in.is-active {
+	animation: fadeIn 1.5s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+}
+.trigger.up.is-active {
+		animation: slideUp 2s .3s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+	}
+.trigger.left.is-active {
+	animation: slideLeft 2s .3s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+}
+.trigger.right.is-active {
+	animation: slideRight 2s .3s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+}
+	@keyframes fadeIn {
+	0% {
+		display: none;
+		opacity: 0;
+	}
+	
+	1% {
+		display: block;
+		opacity: 0;
+	}
+
+	100% {
+		display: block;
+		opacity: 1;
+	}
+}
+	@keyframes slideUp {
+	0% {
+			transform: translateY(180px);
+			opacity: 0;
+			transform: scale(1,2);
+	}
+	
+	100% {
+		transform: translateY(0);
+	transform: scale(1,1);
+	}
+	
+	40%, 100% {
+		opacity: 1;
+		}
+	}
+	@keyframes slideLeft {
+	0% {
+		-webkit-transform: translateX(-180px);
+		transform: translateX(-180px);
+		opacity: 0;
+		}
+	100% {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+	40%, 100% {
+		opacity: 1;
+		}
+	}
+@keyframes slideRight {
+	0% {
+		-webkit-transform: translateX(180px);
+		transform: translateX(180px);
+		opacity: 0;
+		}
+	100% {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+	40%, 100% {
+		opacity: 1;
+		}
+	}
+	</style>
 </head>
 
 <body>
@@ -32,76 +113,10 @@
 <div class="outWrap">
 
 <div  class="l-container">
-
-<div class="container">
-	<ul class="tab-list">
-		<li class="tab-item ">About</li>
-		<li class="tab-item">Works</li>
-		<li class="tab-item">Contact</li>
-	</ul>
-	<div class="tab-container">
-		<div class="tab-content active">About2の内容</div>
-		<div class="tab-content">Works2の内容</div>
-		<div class="tab-content">Contact3の内容</div>
-		<div class="tab-content ">Aboutの内容</div>
-		<div class="tab-content">Worksの内容</div>
-		<div class="tab-content">Contactの内容</div>
-
-	</div>
-	</div>
-	<div class="accordion">
-	<div class="toggle_contents">
-		<p class="toggle_title">HTML</p>
-		<div class="toggle_txt">
-			<pre class="copy">
-				<code>
-&lt;div class=&quot;container&quot;&gt;
-	&lt;ul class=&quot;tab-list&quot;&gt;
-		&lt;li class=&quot;tab-item &quot;&gt;About&lt;/li&gt;
-		&lt;li class=&quot;tab-item&quot;&gt;Works&lt;/li&gt;
-		&lt;li class=&quot;tab-item&quot;&gt;Contact&lt;/li&gt;
-	&lt;/ul&gt;
-&lt;div class=&quot;tab-container&quot;&gt;
-	&lt;div class=&quot;tab-content active&quot;&gt;About2の内容&lt;/div&gt;
-	&lt;div class=&quot;tab-content&quot;&gt;Works2の内容&lt;/div&gt;
-	&lt;div class=&quot;tab-content&quot;&gt;Contact3の内容&lt;/div&gt;
-	&lt;div class=&quot;tab-content &quot;&gt;Aboutの内容&lt;/div&gt;
-	&lt;div class=&quot;tab-content&quot;&gt;Worksの内容&lt;/div&gt;
-	&lt;div class=&quot;tab-content&quot;&gt;Contactの内容&lt;/div&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-</code>
-			</pre>
-		</div>
-	</div>
-	<div class="toggle_contents">
-		<p class="toggle_title">SCSS</p>
-		<div class="toggle_txt">
-			<a href="http://localhost/snipet/scss/object/project/_tab-menu.scss" target="_blank">コードこちら</a>
-		</div>
-	</div>
-	<div class="toggle_contents">
-		<p class="toggle_title">js</p>
-		<div class="toggle_txt">
-			<pre class="copy">
-				<code>
-				// 一つの箇所のみ開く閉じる
-					$(function(){
-						$(&#039;.toggle_title&#039;).on(&#039;click&#039;,function() {
-							$(this).toggleClass(&#039;selected&#039;);
-							$(this).next().slideToggle();
-							$(&#039;.toggle_title&#039;).not($(this)).next().slideUp();
-							$(&#039;.toggle_title&#039;).not($(this)).removeClass(&#039;selected&#039;);
-						});
-					});
-
-				</code>
-			</pre>
-		</div>
-	</div>
-
-</div>
+	<div class="margin200"></div>
+	<h3>上から下に</h3>
+	<img src="../img/01.jpg" alt="" width="300" height="400">
+	
 </div>
 <?php include_once '../assets/inc/toTOP.html'; ?>
 
@@ -113,6 +128,7 @@
 </footer>
 <!-- ここから描いていく -->
 <script src="../js/common.js"></script>
+<script src="../js/observers.js"></script>
 <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.13/clipboard.min.js"></script>
 </body>
 </html>

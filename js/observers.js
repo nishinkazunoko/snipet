@@ -24,7 +24,7 @@ const fadeIn = (target) => {
 
     target.classList.add('is-active');
 
-  } else if (target.classList.contains('down')) {
+  } else if (target.classList.contains('right')) {
 
     target.classList.add('is-active');
 
