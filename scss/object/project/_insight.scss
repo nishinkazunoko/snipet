@@ -1,0 +1,84 @@
+@use "../../foundation/breakpoints" as *;
+@use "../../foundation/mixins" as *;
+@use "../../foundation/variables" as *;
+
+.insight{
+	&__link{
+		background-color:#F6F5F3 ;
+		width: 600px;
+		margin: 40px auto;
+		border-radius: 20px;
+		transition: .3s ease all;
+		a{
+			padding: 30px;
+		}
+		&:hover{
+			background-color: #F7D65B;
+			transform: translateX(1.5em);
+			.arrow{
+				&::before{
+					width: 100px;
+					right: -60px;
+				}
+				&::after{
+					right: -60px;
+				}
+			}
+			a{
+				padding: 30px 50px;
+			}
+		}
+		.arrow{
+			position: relative;
+			display: block;
+			width: auto;
+			height: auto;
+			&::before{
+				content: "";
+				position: absolute;
+				display: block;
+				top: 5px;
+				right: -18px;
+				width: 80px;
+				height: 2px;
+				content: "";
+				background: $gray;
+				transition: all .2s ease;
+			}
+			&::after{
+				content: "";
+				position: absolute;
+				display: block;
+				content: "";
+				transform: rotate(45deg);
+				top: 0px;
+				right: -17px;
+				width: 14px;
+				height: 7px;
+				border-top: 2px solid $gray;
+				transition: all .2s ease;
+			}
+		}
+	}
+}
+
+.nav-dummy{
+	width: 300px;
+	margin: 0 auto;
+		li:not(:last-child){
+			border-bottom: 1px solid #444;
+			width: 100%;
+			font-size: 20px;
+		}
+		li{
+			a{
+				padding: 20px 0;
+				text-align: center;
+			}
+			&.sns-dummy{
+				@include fl(center,center);
+			}
+		}
+}
+
+

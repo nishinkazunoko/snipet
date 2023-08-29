@@ -1,0 +1,38 @@
+@use "./breakpoints" as *;
+
+@mixin mq($breakpoint: md) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+@mixin fl($justift-content,$align-items){
+	display: flex;
+	justify-content: $justift-content;
+	align-items: $align-items;
+}
+
+@mixin fs($sp,$lg){
+	font-size: $sp;
+	@include mq(lg){
+		font-size: $lg;
+	}
+}
+
+@mixin mt($sp,$pc){
+	margin-top: $sp;
+	@include mq(lg){
+		margin-top: $pc;
+	}
+}
+@mixin mb($sp,$pc){
+	margin-bottom: $sp;
+	@include mq(lg){
+		margin-bottom: $pc;
+	}
+}
+
+@mixin maxWid{
+	width: 100vw;
+	margin: 0 calc(50% - 50vw);
+}

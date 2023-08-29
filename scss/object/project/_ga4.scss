@@ -1,0 +1,13 @@
+@use "../../foundation/breakpoints" as *;
+@use "../../foundation/mixins" as *;
+
+.ga4Wrap{
+	padding: 30px;
+	background-color: #EDF2F7;
+	p{
+		padding: 30px;
+		background-color: #fff;
+		border-radius: 20px;
+		line-height: 2;
+	}
+}

@@ -1,0 +1,123 @@
+@use "../foundation/breakpoints" as *;
+@use "../foundation/mixins" as *;
+@use "../foundation/variables" as *;
+
+.header{
+	font-family: "zeitung", sans-serif;
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+	&__wrap{
+		position: fixed;
+		left: 0;
+		width: 80px;
+		height: 100svh;
+		background-color:#F7D65B;
+		@include fl(center,center);
+		flex-direction: column;
+		z-index: 26;
+	}
+	.ham{
+		position: absolute;
+		top: 20px;
+		left: 0;
+		background-image: url(../img/qr_bg.svg);
+		background-repeat: no-repeat;
+		background-size: contain;
+		width: 80px;
+		height: 80px;
+		transition: 0.3s ease;
+		cursor: pointer;
+		&:hover{
+		opacity: 0.7;
+		}
+
+	}
+	span{
+		background-color: $gray;
+		height: 2px;
+		position: absolute;
+		right: 28px;
+		width: 25px;
+		z-index: 9;
+		transition: all 0.3s ease-in-out;//spanにtransitionつける
+		&:nth-child(1){
+			top: 26px;
+		}
+		&:nth-child(2){
+			top: 35px;
+		}
+		&:nth-child(3){
+			top: 45px;
+		}
+	}
+	.globalMenu{
+		background-color: #fff;
+		width: 100%;
+		height: 100vh;
+		position: fixed;
+		top: 0%;
+		left: 80px;
+		right: 0;
+		opacity: 0;
+		transition-duration: .6s;
+		visibility:hidden;//animationの長さを設定
+		z-index: 26;
+		ul{
+		text-align: center;
+		margin-top: 80px;
+		color: #fff;
+		font-family: 'Darumadrop One', cursive;
+		font-display: swap;
+		max-width: 700px;
+		height: 100svh;
+		width: 100%;
+		gap: 30px;
+		display: grid;
+		grid-template-columns: 30% 30% 30%;
+		margin: 0 auto;
+		place-content: center;
+		position: relative;
+		li{
+			padding-bottom: 20px;
+			font-size: 36px;
+			a{
+				color: #fff;
+			}
+		}
+		}
+		.menu-overlay{
+			opacity: 0;
+		}
+		}
+	//active
+	.globalMenu.active{
+		opacity: 100;
+		transition: opacity 0.6s ease, visibility 0.6s ease;
+		//visiblity:hideで非表示、visiblity:visibleで表示させられる
+		background-color: $gray;
+		width: calc(100% - 80px);
+		position: fixed;
+		visibility: visible;
+		top: 0%;
+		left: 80px;
+		right: 0;
+		color: #fff;
+		.menu-overlay{
+			position: fixed;
+			background:$gray ;
+			opacity: 1;
+		}
+		}
+		.ham.active span{
+		transition: all 0.3s ease-in-out;//spanにtransitionつける
+		position: absolute;
+		top: 34px;
+		&:nth-child(1){
+			transform:  rotate(45deg) ;
+			}
+			&:nth-child(2),&:nth-child(3){
+			transform: rotate(-45deg) ;
+			}
+		}
+}

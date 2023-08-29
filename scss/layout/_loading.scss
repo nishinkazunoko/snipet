@@ -1,0 +1,213 @@
+
+@use "../foundation/breakpoints" as *;
+@use "../foundation/mixins" as *;
+@use "../foundation/variables" as *;
+#loading{
+	display: none;
+}
+
+#loading .is-active{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	background-color: #fff;
+	display: grid;
+	place-content: center;
+}
+#loading__logo{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	svg{
+		width: 500px;
+	}
+}
+	.loading__skip{
+		font-size: 16px;
+		font-family: 'Darumadrop One', cursive;
+		font-display: swap;
+		padding: 20px;
+		position: absolute;
+		top: 80%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 300px;
+		text-align: center;
+		border: none;
+		border-radius: 20px;
+		cursor: pointer;
+	}
+	.loading__skip.is-skip{
+		display: none;
+	}
+	.loading__chara{
+		width: 100%;
+		height: 100svh;
+		ul{
+			li{
+				img{
+					position: absolute;
+					animation-name: loadingAnime; /*--アニメーション名--*/
+					animation-duration: 2s; /*--時間--*/
+					animation-fill-mode: forwards; /*--状態指定--*/
+					opacity: 0;
+				}
+			}
+		}
+		&01{
+				animation-delay: 2s;
+				left: 0;
+				top: 20%;
+		}
+		&02{
+				animation-delay: 4s;
+				right: 0;
+				top: 20%;
+		}
+		&03{
+				animation-delay: 6s;
+				left: 40px;
+				bottom: 0;
+		}
+		&04{
+				animation-delay: 8s;
+				right: 40px;
+				bottom: 0;
+		}
+
+	}
+	@keyframes loadingAnime {
+		0%{
+			opacity: 0;
+		}
+		100%{
+			opacity: 1;
+		}
+		
+	}
+	.loading__fadeOut{
+		animation:loadingFadeOut 1s 7s ease forwards;
+		position: absolute;
+		top: 20%;
+	}
+	@keyframes loadingFadeOut {
+		100%{
+			opacity: 0;
+		}
+		
+	}
+	.loading__fadeIn{
+		animation:loadingFadeIn 1s 7s ease forwards;
+		position: absolute;
+		top: 20%;
+		opacity: 0;
+	}
+	@keyframes loadingFadeIn {
+		100%{
+			opacity: 1;
+		}
+		
+	}
+	.loading__fireworks{
+		@keyframes fireworks-animation {
+			0% {
+				transform: translate(-50%, 90vh);
+				width: 4px;
+				opacity: 1;
+			}
+			50% {
+				width: 4px;
+				opacity: 1;
+			}
+			100% {
+				width: 600px;
+				opacity: 0;
+			}
+		}
+		
+		.c-firework,
+		.c-firework::before,
+		.c-firework::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			aspect-ratio: 1;
+			background: radial-gradient(circle, orange 10px, #000 0) 50% 00%,
+				radial-gradient(circle, khaki 10px, #000 0) 00% 50%,
+				radial-gradient(circle, white 10px, #000 0) 50% 99%,
+				radial-gradient(circle, lime 10px, #000 0) 99% 50%,
+				radial-gradient(circle, rgb(9, 9, 159) 10px, #000 0) 80% 90%,
+				radial-gradient(circle, red 10px, #000 0) 95% 90%,
+				radial-gradient(circle, yellow 10px, #000 0) 10% 60%,
+				radial-gradient(circle, khaki 10px, #000 0) 31% 80%,
+				radial-gradient(circle, white 10px, #000 0) 80% 10%,
+				radial-gradient(circle, lime 10px, #000 0) 90% 23%,
+				radial-gradient(circle, pink 10px, #000 0) 45% 20%,
+				radial-gradient(circle, red 10px, #000 0) 13% 24%;
+			background-size: 8px 8px;
+			background-repeat: no-repeat;
+			transform: translate(-50%, -50%);
+			animation: fireworks-animation 3s forwards;
+		}
+		.c-firework::before {
+			transform: translate(-50%, -50%) rotate(25deg) !important;
+		}
+		.c-firework::after {
+			transform: translate(-50%, -50%) rotate(-37deg) !important;
+		}
+		
+		.c-firework:nth-of-type(2),
+		.c-firework:nth-of-type(2)::before,
+		.c-firework:nth-of-type(2)::after {
+			top: 30%;
+			left: 16%;
+			animation-duration: 3.8s;
+		}
+		.c-firework:nth-of-type(3),
+		.c-firework:nth-of-type(3)::before,
+		.c-firework:nth-of-type(3)::after {
+			top: 10%;
+			left: 72%;
+			animation-duration:2.2s;
+		}
+		.c-firework:nth-of-type(4),
+		.c-firework:nth-of-type(4)::before,
+		.c-firework:nth-of-type(4)::after {
+			top: 28%;
+			left: 32%;
+			animation-duration: 5.9s;
+		}
+		.c-firework:nth-of-type(5),
+		.c-firework:nth-of-type(5)::before,
+		.c-firework:nth-of-type(5)::after {
+			top: 32%;
+			left: 84%;
+			animation-duration:7.4s;
+		}
+		.c-firework:nth-of-type(6),
+		.c-firework:nth-of-type(6)::before,
+		.c-firework:nth-of-type(6)::after {
+			top: 38%;
+			left: 40%;
+			animation-duration: 4.1s;
+		}
+	}
+
+#loadingIcon{
+	path{
+		fill-opacity: 0;
+		transition: fill-opacity .5s;
+		fill: none;
+		stroke: $gray;
+	}
+	&.done{
+		path{
+			fill: #F7D65B;
+			fill-opacity: 1;
+			stroke: none;
+		}
+	}
+}

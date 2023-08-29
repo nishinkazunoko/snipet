@@ -1,0 +1,15 @@
+@use "../../foundation/breakpoints" as *;
+@use "../../foundation/mixins" as *;
+@use "../../foundation/variables" as *;
+
+.pic{
+	@include fl(center,center);
+	flex-direction: column;
+	max-width: 400px;
+	overflow: hidden;
+	&__item{
+		img{
+			width: 100%;
+		}
+	}
+}

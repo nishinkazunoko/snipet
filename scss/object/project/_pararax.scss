@@ -1,0 +1,20 @@
+@use "../../foundation/breakpoints" as *;
+@use "../../foundation/mixins" as *;
+@use "../../foundation/variables" as *;
+.l-container{
+	position: relative;
+	// .img-bg{
+	// 	position: fixed;
+	// 	top: 0;
+	// }
+	// @for $value from 0 through 17 {	
+	// 	.img-posi#{$value * 1} {
+	// 		img{
+	// 			left: 10px* $value;
+	// 			position: absolute;
+	// 			top:  200px* $value;
+	// 		}
+	// 	}	
+	// }
+
+}

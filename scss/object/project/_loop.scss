@@ -1,0 +1,40 @@
+@use "../../foundation/breakpoints" as *;
+@use "../../foundation/mixins" as *;
+@use "../../foundation/variables" as *;
+.loop{
+	&__wrap{
+		display: flex;
+		overflow: hidden;	
+		padding-top: 40px;
+	}
+	&__list{
+		display: flex;
+		list-style: none;
+		gap: 30px;	
+	}
+	&__list--left{
+		animation :infinity-scroll-left 10s infinite linear 0.5s both;
+		animation :infinity-scroll-left 10s infinite linear 0.5s both;
+		&:hover{
+			animation-play-state: paused;
+		}
+	}
+	&__item{
+		width: calc(100vw / 5);
+		p{
+			padding: 20px;
+			width: 100%;
+			background-color: antiquewhite;
+			border-radius: 20px;
+		}
+	}
+
+}
+@keyframes infinity-scroll-left {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-100%);
+	}
+	}

@@ -1,0 +1,23 @@
+@use "../../foundation/breakpoints" as *;
+@use "../../foundation/mixins" as *;
+@use "../../foundation/variables" as *;
+
+.fontsWrap{
+	display: grid;
+	grid-template-columns:33% 33% 33%;
+	place-content: center;
+	text-align: center;
+	grid-template-rows:200px;
+	justify-items:center;
+	align-items: center; 
+}
+.hiraPro{
+	font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+}
+.Yugothic{
+	font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+}
+
+.hiraStd{
+	font-family: "Hiragino Kaku Gothic Std", sans-serif;
+}
