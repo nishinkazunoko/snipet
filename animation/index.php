@@ -8,15 +8,6 @@
 <!-- css -->
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="https://use.typekit.net/gkq7oar.css">
-<!-- favicon -->
-	<link rel="icon" href="img/favicon.ico">
-<!-- OGP -->
-	<meta property="og:url" content="ページのURL">
-	<meta property="og:title" content="ページのタイトル">
-	<meta property="og:description" content="ページの説明文">
-	<meta property="og:type" content="Webページのタイプ">
-	<meta property="og:image" content="サムネイルとして表示したい画像パス">
-	<link rel="apple-touch-icon" sizes="180×180" href="img/favicon.ico">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet">
