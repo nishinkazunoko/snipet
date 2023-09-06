@@ -9,14 +9,6 @@
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="https://use.typekit.net/gkq7oar.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lite-youtube-embed/0.2.0/lite-yt-embed.css" integrity="sha512-a/02IBOTwuaufMgBLYpBKvO9y01S8rmk0l0+xSxQfI8PDgmxC1O/DJaH8PfAL43iTqed/V+q6OsCNH+o963PlQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<!-- favicon -->
-	<link rel="icon" href="img/favicon.ico">
-<!-- OGP -->
-	<meta property="og:url" content="ページのURL">
-	<meta property="og:title" content="ページのタイトル">
-	<meta property="og:description" content="ページの説明文">
-	<meta property="og:type" content="Webページのタイプ">
-	<meta property="og:image" content="サムネイルとして表示したい画像パス">
 	<link rel="apple-touch-icon" sizes="180×180" href="img/favicon.ico">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
