@@ -108,61 +108,6 @@
 <body>
 <main>
 
-	<div class="container">
-		<div class="card" onclick="flip(event)">
-			<div class="front">
-			<h1>This is the front</h1>
-			<p> Here is some additional text</p>
-			</div>
-			<div class="back">
-			<h1>This is the back</h1>
-			</div>
-		</div>
-	</div>
-
-	<div class="container">
-		<div class="card"  onclick="flip(event)">
-			<div class="front">
-			<h1>This is the front</h1>
-			<p> Here is some additional text</p>
-			</div>
-			<div class="back">
-			<h1>This is the back</h1>
-			</div>
-		</div>
-	</div>
-
-	<button>click</button>
-
-	<div class="tabmenu">
-		<ul>
-			<li class="selected" data-id="tab-1">タブ１</li>
-			<li data-id="tab-2">タブ２</li>
-			<li data-id="tab-3">タブ３</li>
-		</ul>
-		<div class="tab-content selected" id="tab-1">タブ１です</div>
-	</div>
-<script>
-	document.addEventListener('DOMContentLoaded', function(){
-  // タブに対してクリックイベントを適用
-	const tabs = document.getElementsByClassName('tab');
-	for(let i = 0; i < tabs.length; i++) {
-		tabs[i].addEventListener('click', tabSwitch, false);
-	}
-
-	// タブをクリックすると実行する関数
-	function tabSwitch(){
-		// タブのclassの値を変更
-		document.getElementsByClassName('is-active')[0].classList.remove('is-active');
-		this.classList.add('is-active');
-		// コンテンツのclassの値を変更
-		document.getElementsByClassName('is-show')[0].classList.remove('is-show');
-		const arrayTabs = Array.prototype.slice.call(tabs);
-		const index = arrayTabs.indexOf(this);
-		document.getElementsByClassName('panel')[index].classList.add('is-show');
-	};
-}, false);
-</script>
 
 </main>
 <footer>
