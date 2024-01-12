@@ -82,6 +82,8 @@
 </head>
 
 <body>
+<?php include_once '../assets/inc/header.html'; ?>
+
 <main>
 	<div class="menu">
 		<ul>
@@ -147,5 +149,8 @@ btnMore.forEach(function (btn) {
 
 </footer>
 <!-- ここから描いていく -->
+<script src="../js/common.js"></script>
+<script src="https://cdn.jsdelivr.net/clipboard.js/1.5.13/clipboard.min.js"></script>
+
 </body>
 </html>
